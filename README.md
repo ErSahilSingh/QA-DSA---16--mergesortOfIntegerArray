@@ -16,3 +16,23 @@ var merge = function(nums1, m, nums2, n) {
     return nums1
     
 };
+
+
+///
+function mergetwosort(nums1, nums2) {
+    let nums3 = []
+    let i = 0;
+    let j = 0;
+    while (i<nums1.length && j<nums2.length) {
+        if (nums1[i]<nums2[j]) {
+            nums3.push(nums1[i])
+            i++
+        } else {
+            nums3.push(nums2[j])
+            j++
+        }
+    }
+    return [...nums3,...nums1.slice(i),...nums2.slice(j)]
+}
+
+console.log(mergetwosort([1, 3, 5, 6], [4, 6, 8, 9]))
